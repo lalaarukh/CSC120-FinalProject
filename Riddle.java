@@ -19,8 +19,8 @@ public class Riddle {
             {"What has to be broken before you can use it?", "Egg"}
         };
         
-        Random rand = new Random();
-        int ind = rand.nextInt(10);
+        Random random = new Random();
+        int ind = random.nextInt(10);
         String[] sel_tup = qs[ind];
         System.out.println("Question: " + sel_tup[0]);
         
@@ -39,12 +39,12 @@ public class Riddle {
         return score;
     }
     
-    public static void main(String[] args) {
-        int score = 0;
-        while (true) {
-            score = riddle(score);
-        }
-    }
+    //public static void main(String[] args) {
+        //int score = 0;
+        //while (true) {
+          //  score = riddle(score);
+       // }
+    //}
     
     
 }

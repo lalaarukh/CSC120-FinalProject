@@ -36,7 +36,7 @@ public class BossGame {
         return score;
     }
     
-    public static void main(String[] args) {
-        boss();
-    }
+    //public static void main(String[] args) {
+       // boss();
+    //}
 }
