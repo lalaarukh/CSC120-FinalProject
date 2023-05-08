@@ -5,6 +5,9 @@ import java.lang.String;
 public class BadBoniAdventureGame {
 
     public static void main(String[] args) {
+
+        int score = 0;
+        int roundnumber = 1;
     
         //Where the storyline starts 
         System.out.println("Welcome to the Bad Boni Adventure Game!");
@@ -19,8 +22,6 @@ public class BadBoniAdventureGame {
         System.out.println("\nTo beat the first bridge troll, you must answer 3 riddles correctly. Sharpen those teeth!\n");
 
         //calls riddle function and runs it 3 times
-        int score = 0;
-        int roundnumber = 1;
         while (roundnumber <= 3) {
             score = Riddle.run(score);
             roundnumber += 1;
@@ -47,7 +48,6 @@ public class BadBoniAdventureGame {
         System.out.println("\nTo do this, you have to guess a combination of four numbers");
     
         //calls the running function which is the BOSS and runs it 4 times
-        
         while (roundnumber <= 10){
             score += BossGame.boss();
             roundnumber += 1;

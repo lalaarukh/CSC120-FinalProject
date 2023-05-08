@@ -5,7 +5,7 @@ public class BossGame {
     
     public static int boss() {
         int score = 0;
-        int length = 3;
+        int length = 4;
         int chances = 3;
         int pattern = new Random().nextInt(9000) + 1000;
         Scanner input = new Scanner(System.in);

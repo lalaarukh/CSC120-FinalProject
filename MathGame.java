@@ -2,6 +2,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MathGame {
+
+    //public int score; 
+
     public static int run(int score) {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
