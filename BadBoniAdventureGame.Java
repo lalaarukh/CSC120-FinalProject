@@ -1,7 +1,11 @@
 import java.util.Scanner;
 import java.util.Random;
 import java.lang.String;
-
+ 
+/**
+ *  This class has the main class which calls on the other classes. The other classes have the gameplay and this
+ * class has the scoring system. There are also while loops to ensure the right amount of rounds are run.
+ */
 public class BadBoniAdventureGame {
 
     public static void main(String[] args) {
@@ -15,13 +19,13 @@ public class BadBoniAdventureGame {
         System.out.println("To do that, you have to beat 2 bridge trolls and then THEIR BOSS. Each round has a certain number of points, you need to get 8 total to win!\n");
         System.out.println("Let us begin!");
 
-        //Ask for basic information 
+        //Ask for basic information by calling on the Player class
         Player player = new Player();
         player.getInfo();
         System.out.println("Welcome, " + player.getInfo() + "!");
         System.out.println("\nTo beat the first bridge troll, you must answer 3 riddles correctly. Sharpen those teeth!\n");
 
-        //calls riddle function and runs it 3 times
+        //calls riddle function and runs it 3 times in a while loop
         while (roundnumber <= 3) {
             score = Riddle.run(score);
             roundnumber += 1;
@@ -32,9 +36,9 @@ public class BadBoniAdventureGame {
             System.out.println("\nUh oh. You did not get all 3 right but that is okay! You get another chance at beating his brother. Time to pull out those rad math skillz");
         }
     
-        System.out.println("\nHere it comes!\n");
+        System.out.println("\nHere it comes! Make sure to answer in numbers(1,2,3..) and not letters(one, two, three)\n");
 
-        //calls math function and runs it 3 times
+        //calls math function and runs it 3 times in a while loop
         
         while (roundnumber <= 6) {
             score = MathGame.run(score);
@@ -45,20 +49,20 @@ public class BadBoniAdventureGame {
         } else {
             System.out.println("\nMeep morp. You didn't do great here but that's okay! Bring out the skills you have been hiding and bare your claws; it's time to fight the BOSS!");
         }
-        System.out.println("\nTo do this, you have to guess a combination of four numbers");
+        System.out.println("\nTo do this, you have to guess a combination of three numbers");
     
-        //calls the running function which is the BOSS and runs it 4 times
-        while (roundnumber <= 10){
+        //calls the boss class
+        // the boss function itself gives you 3 chances but it counts as 1 round
+        while (roundnumber <= 7){
             score += BossGame.boss();
             roundnumber += 1;
         }
-     
-        System.out.println(score);
 
+        //determines the final standing of the player
         if (score >= 8) {
-            System.out.println("You won!");
+            System.out.println("Your total score is " + score + ". You won!");
         } else {
-            System.out.println("boohoo loser");
+            System.out.println("Your total score is " + score + ". You got so close! Try again soon, the trolls await :)");
         }
     }
 }

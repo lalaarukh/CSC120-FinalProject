@@ -1,10 +1,13 @@
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * This class has an array of strings which are the math questions called upon in round 2 of the game. It outputs
+ * a question and keeps track of the user answer (if they are getting it correct and updating the score).
+ */
 public class MathGame {
 
-    //public int score; 
-
+    // this function takes in the answers that players put in and updates score accordingly
     public static int run(int score) {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
@@ -20,16 +23,22 @@ public class MathGame {
                 {"If 2 is company and 3 is a crowd, what are 4 and 5?", "9"}
         };
         int ind = rand.nextInt(10);
-        String[] sel_tup = questions[ind];
-        System.out.println("Question: " + sel_tup[0]);
-        System.out.print("gimme answer: ");
+        String[] selInd = questions[ind];
+
+        //print questions and take in answer
+        System.out.println("Question: " + selInd[0]);
+        System.out.println("Give me your answer: ");
+
+        //format answer to match given answer
         String ans = sc.nextLine().trim().toLowerCase();
-        if (ans.equals(sel_tup[1].toLowerCase())) {
+
+        //check if answer is correct
+        if (ans.equals(selInd[1].toLowerCase())) {
             System.out.println("Woohoo!");
             score += 1;
             System.out.println("Your Score is: " + score + "\n");
         } else {
-            System.out.println("Nope, Answer: " + sel_tup[1]);
+            System.out.println("Nope, Answer: " + selInd[1]);
             System.out.println("Your Score is: " + score);
         }
         return score;
